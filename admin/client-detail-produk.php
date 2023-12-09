@@ -105,5 +105,5 @@ class clientDetail
 }
 
 //url menyesuaikan, nanti buat server_spesifikasi_laptop
-$urlDetail = 'http://192.168.1.26/tokosepatu/server/server_detail_produk.php';
+$urlDetail = 'http://192.168.1.26/tokosepatu/server_toko-sepatu/server_detail_produk.php';
 $clientDetail = new clientDetail($urlDetail);

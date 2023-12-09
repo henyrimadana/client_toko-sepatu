@@ -104,5 +104,5 @@ class clientTransaksi
 
 }
 
-$urlTransaksi = 'http://192.168.1.26/tokosepatu/server/server_transaksi.php';
+$urlTransaksi = 'http://192.168.1.26/tokosepatu/server_toko-sepatu/server_transaksi.php';
 $clientTransaksi = new clientTransaksi($urlTransaksi);
