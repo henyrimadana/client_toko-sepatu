@@ -7,15 +7,25 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $dataUser = $clientPelanggan->tampil_pelanggan($_GET['username']);
+    $dataUser = $clientPelanggan->tampil_username($username);
 
-    if ($dataPelanggan) {
+    if ($dataUser->username == $username) {
         // Periksa apakah password benar
-        if ($password === $dataPelanggan['password']) {
+        if ($password === $dataUser->password) {
             session_start();
-            $_SESSION['username'] = $dataPelanggan['username'];
+            $_SESSION['username'] = $dataUser->username;
+            $_SESSION['role'] = $dataUser->role;
 
-            header("Location: utama.php");
+            // Arahkan ke dashboard yang sesuai berdasarkan peran
+            if ($dataUser->role == "user") {
+                header("Location: utama.php");
+            } elseif ($dataUser->role == "admin") {
+                header("Location: index.php");
+            } else {
+                // Peran tidak valid
+                echo '<script>alert("Login gagal. Hubungi admin."); window.location.href = "login.php";</script>';
+                exit();
+            }
             exit();
         } else {
             echo '<script>alert("Login gagal. Password salah."); window.location.href = "login.php";</script>';
@@ -86,13 +96,13 @@ if (isset($_POST['login'])) {
 
                             <form action="login.php" method="post">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput"
-                                        placeholder="Silahkan isi Username">
+                                    <input type="text" class="form-control" id="username" name="username" required
+                                        placeholder="Masukkan Username Anda">
                                     <label for="floatingInput">Username</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword"
-                                        placeholder="Silahkan isi Password">
+                                    <input type="password" class="form-control" id="password" name="password" required
+                                        placeholder="Masukkan Password Anda">
                                     <label for="floatingPassword">Password</label>
                                 </div>
 
