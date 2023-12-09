@@ -13,7 +13,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <title>Data Transaksi</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- DataTables -->
@@ -52,7 +53,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="./index.php" class="brand-link">
-                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light">HISHOES</span>
             </a>
 
@@ -70,7 +72,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -185,11 +188,13 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                         <li class="nav-header">Transaksi</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
-                            <i class="fas fa-cart-arrow-down"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
                                 <p>
                                     Transaksi
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-success right"><?php echo count($dataTransaksi) ?></span>
+                                    <span class="badge badge-success right">
+                                        <?php echo count($dataTransaksi) ?>
+                                    </span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -263,7 +268,7 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                             <?php $no = 1;
                                             $data_array = $clientTransaksi->tampil_semua_transaksi();
                                             foreach ($data_array as $r) {
-                                            ?>
+                                                ?>
                                                 <tr>
                                                     <td>
                                                         <?= $no ?>
@@ -286,13 +291,16 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                                         <?= $r->jumlah ?>
                                                     </td>
                                                     <td class="col-2 text-center">
-                                                            <!-- <a class="btn btn-outline-primary btn-sm" type="button" a
+                                                        <!-- <a class="btn btn-outline-primary btn-sm" type="button" a
                                                                 href="ubah-transaksi.php?id_transaksi=<?= $r->id_transaksi ?>"><i class="fas fa-edit"></i> Ubah</a> -->
-                                                            <a class="btn btn-outline-danger btn-sm" type="button" a href="proses-transaksi.php?aksi=hapus&id_transaksi=<?= $r->id_transaksi ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                                        <a class="btn btn-outline-danger btn-sm" type="button" a
+                                                            href="proses-transaksi.php?aksi=hapus&id_transaksi=<?= $r->id_transaksi ?>"
+                                                            onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini?')"><i
+                                                                class="fas fa-trash-alt"></i> Hapus</a>
                                                     </td>
 
                                                 </tr>
-                                            <?php $no++;
+                                                <?php $no++;
                                             }
                                             unset($data_array, $r, $no);
                                             ?>
@@ -315,7 +323,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> & <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
+            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> &
+                <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Sistem Terdistribusi & Keamanan</b> 2023

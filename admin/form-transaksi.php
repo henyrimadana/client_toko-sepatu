@@ -14,7 +14,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <title>Tambah Transaksi</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Theme style -->
@@ -49,7 +50,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="./index.php" class="brand-link">
-                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light">HISHOES</span>
             </a>
 
@@ -67,7 +69,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -182,11 +185,13 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                         <li class="nav-header">Transaksi</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
-                            <i class="fas fa-cart-arrow-down"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
                                 <p>
                                     Transaksi
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-success right"><?php echo count($dataTransaksi) ?></span>
+                                    <span class="badge badge-success right">
+                                        <?php echo count($dataTransaksi) ?>
+                                    </span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -250,19 +255,23 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label class="form-label">ID Transaksi</label>
-                                            <input type="text" class="form-control" name="id_transaksi" id="formGroupExampleInput" placeholder="Otomatis" disabled>
+                                            <input type="text" class="form-control" name="id_transaksi"
+                                                id="formGroupExampleInput" placeholder="Otomatis" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label">Produk</label>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="id_produk">
+                                            <select class="form-control" id="exampleFormControlSelect1"
+                                                name="id_produk">
                                                 <option selected disabled>Pilih Produk</option>
                                                 <?php
                                                 include "client-produk.php";
                                                 $dataProduk = $clientProduk->tampil_semua_produk();
                                                 foreach ($dataProduk as $produk) {
-                                                ?>
-                                                    <option value="<?= $produk->id_produk ?>"><?= $produk->nama_produk ?></option>
-                                                <?php
+                                                    ?>
+                                                    <option value="<?= $produk->id_produk ?>">
+                                                        <?= $produk->nama_produk ?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                 unset($dataProduk, $produk);
                                                 ?>
@@ -270,15 +279,18 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label">Pelanggan</label>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="id_pelanggan">
+                                            <select class="form-control" id="exampleFormControlSelect1"
+                                                name="id_pelanggan">
                                                 <option selected disabled>Pilih Pelanggan</option>
                                                 <?php
                                                 include "client-pelanggan.php";
                                                 $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
                                                 foreach ($dataPelanggan as $pelanggan) {
-                                                ?>
-                                                    <option value="<?= $pelanggan->id_pelanggan ?>"><?= $pelanggan->nama ?></option>
-                                                <?php
+                                                    ?>
+                                                    <option value="<?= $pelanggan->id_pelanggan ?>">
+                                                        <?= $pelanggan->nama ?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                 unset($dataPelanggan, $pelanggan);
                                                 ?>
@@ -286,11 +298,13 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">Tanggal</label>
-                                            <input type="date" class="form-control" name="tanggal" id="formGroupExampleInput2">
+                                            <input type="date" class="form-control" name="tanggal"
+                                                id="formGroupExampleInput2">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">Jumlah</label>
-                                            <input type="text" class="form-control" name="jumlah" id="formGroupExampleInput2" placeholder="Silahkan isi Jumlah">
+                                            <input type="text" class="form-control" name="jumlah"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi Jumlah">
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -311,7 +325,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> & <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
+            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> &
+                <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Sistem Terdistribusi & Keamanan</b> 2023
@@ -334,13 +349,13 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/demo.min.js"></script>
+
+
 
 
     <!-- Page specific script -->
     <script>
-        $(function() {
+        $(function () {
             bsCustomFileInput.init();
         });
     </script>

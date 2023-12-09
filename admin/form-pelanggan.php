@@ -13,7 +13,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <title>Tambah Pelanggan</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Theme style -->
@@ -48,7 +49,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="./index.php" class="brand-link">
-                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light">HISHOES</span>
             </a>
 
@@ -66,7 +68,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -181,11 +184,13 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                         <li class="nav-header">Transaksi</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link ">
-                            <i class="fas fa-cart-arrow-down"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
                                 <p>
                                     Transaksi
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-success right"><?php echo count($dataTransaksi) ?></span>
+                                    <span class="badge badge-success right">
+                                        <?php echo count($dataTransaksi) ?>
+                                    </span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -249,25 +254,42 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label class="form-label">ID Pelanggan</label>
-                                            <input type="text" class="form-control" name="id_pelanggan" id="formGroupExampleInput" placeholder="Otomatis" disabled>
+                                            <input type="text" class="form-control" name="id_pelanggan"
+                                                id="formGroupExampleInput" placeholder="Otomatis" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">Nama
                                                 Pelanggan</label>
-                                            <input type="text" class="form-control" name="nama" id="formGroupExampleInput2" placeholder="Silahkan isi Nama Pelanggan">
+                                            <input type="text" class="form-control" name="nama"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi Nama Pelanggan">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" name="alamat" id="formGroupExampleInput2" placeholder="Silahkan isi alamat">
+                                            <input type="text" class="form-control" name="alamat"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi alamat">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">No HP</label>
-                                            <input type="text" class="form-control" name="no_hp" id="formGroupExampleInput2" placeholder="Silahkan isi No HP">
+                                            <input type="text" class="form-control" name="no_hp"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi No HP">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput2" class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" id="formGroupExampleInput2" placeholder="Silahkan isi Email">
+                                            <input type="email" class="form-control" name="email"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2" class="form-label">Username</label>
+                                            <input type="text" class="form-control" name="username"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi Username"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2" class="form-label">Password</label>
+                                            <input type="password" class="form-control" name="password"
+                                                id="formGroupExampleInput2" placeholder="Silahkan isi Password"
+                                                required>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -288,7 +310,8 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> & <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
+            <strong>Copyright &copy; 2023 <a href="https://instagram.com/henyrmdn_" target="_blank">Heny Rimadana</a> &
+                <a href="https://instagram.com/imamtl.k" target="_blank">Imamatul Khoiriyah</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Sistem Terdistribusi & Keamanan</b> 2023
@@ -311,13 +334,12 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/demo.min.js"></script>
+
 
 
     <!-- Page specific script -->
     <script>
-        $(function() {
+        $(function () {
             bsCustomFileInput.init();
         });
     </script>

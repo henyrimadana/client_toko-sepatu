@@ -368,6 +368,7 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+    
 
 
 </body>

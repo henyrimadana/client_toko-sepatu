@@ -9,6 +9,8 @@ if ($_POST['aksi'] == 'tambah') {
         "alamat" => $_POST['alamat'],
         "no_hp" => $_POST['no_hp'],
         "email" => $_POST['email'],
+        "username" => $_POST['username'],
+        "password" => $_POST['password'],
         "aksi" => $_POST['aksi']
     );
     $clientPelanggan->tambah_pelanggan($data);
@@ -20,6 +22,8 @@ if ($_POST['aksi'] == 'tambah') {
         "alamat" => $_POST['alamat'],
         "no_hp" => $_POST['no_hp'],
         "email" => $_POST['email'],
+        "username" => $_POST['username'],
+        "password" => $_POST['password'],
         "aksi" => $_POST['aksi']
     );
     $clientPelanggan->ubah_pelanggan($data);

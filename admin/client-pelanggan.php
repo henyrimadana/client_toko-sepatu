@@ -83,6 +83,8 @@ class clientPelanggan
             "alamat":"' . $data['alamat'] . '",
             "no_hp":"' . $data['no_hp'] . '",
             "email":"' . $data['email'] . '",
+            "username":"' . $data['username'] . '",
+            "password":"' . $data['password'] . '",
             "aksi":"' . $data['aksi'] . '"
         }';
         $c = curl_init();
