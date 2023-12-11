@@ -40,6 +40,19 @@ class clientTransaksi
         return $data;
         // unset($id_transaksi, $client, $response, $data);
     }
+
+    public function tampil_transaksi_by_pelanggan($id_pelanggan)
+    {
+        $id_pelanggan = $this->filter($id_pelanggan);
+        $client = curl_init($this->url . "?aksi=tampil_by_pelanggan&id_pelanggan=" . $id_pelanggan);
+        curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($client);
+        curl_close($client);
+        $data = json_decode($response);
+        return $data;
+        // unset($id_pelanggan, $client, $response, $data);
+    }
+
     public function tambah_transaksi($data)
     {
         $data = '{
@@ -101,8 +114,7 @@ class clientTransaksi
     {
         unset($this->options, $this->api);
     }
-
 }
 
-$urlTransaksi = 'http://192.168.1.26/tokosepatu/server_toko-sepatu/server_transaksi.php';
+$urlTransaksi = 'http://192.168.100.8:8080/toko_sepatu/server_toko-sepatu/server_transaksi.php';
 $clientTransaksi = new clientTransaksi($urlTransaksi);

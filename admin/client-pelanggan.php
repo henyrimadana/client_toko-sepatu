@@ -63,6 +63,7 @@ class clientPelanggan
             "email":"' . $data['email'] . '",
             "username":"' . $data['username'] . '",
             "password":"' . $data['password'] . '",
+            "role":"' . $data['role'] . '",
             "aksi":"' . $data['aksi'] . '"
         }';
         $c = curl_init();
@@ -119,5 +120,5 @@ class clientPelanggan
 
 }
 
-$urlPelanggan = 'http://192.168.1.26/tokosepatu/server_toko-sepatu/server_pelanggan.php';
+$urlPelanggan = 'http://192.168.100.8:8080/toko_sepatu/server_toko-sepatu/server_pelanggan.php';
 $clientPelanggan = new clientPelanggan($urlPelanggan);

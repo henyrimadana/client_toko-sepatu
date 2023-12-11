@@ -97,5 +97,5 @@ class clientKategori
 
 }
 
-$urlKategori = 'http://192.168.1.26/tokosepatu/server_toko-sepatu/server_kategori.php';
+$urlKategori = 'http://192.168.100.8:8080/toko_sepatu/server_toko-sepatu/server_kategori.php';
 $clientKategori = new clientKategori($urlKategori);

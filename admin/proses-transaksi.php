@@ -12,7 +12,8 @@ if ($_POST['aksi'] == 'tambah') {
         "aksi" => $_POST['aksi']
     );
     $clientTransaksi->tambah_transaksi($data);
-    header('location:transaksi.php');
+    echo '<script>alert("Transaksi Berhasil"); window.location.href = "../user-transaksi.php";</script>';
+    exit();
 } else if ($_POST['aksi'] == 'ubah') {
     $data = array(
         "id_transaksi" => $_POST['id_transaksi'],
@@ -33,4 +34,3 @@ if ($_POST['aksi'] == 'tambah') {
     header('location:transaksi.php');
 }
 unset($clientTransaksi, $data);
-?>

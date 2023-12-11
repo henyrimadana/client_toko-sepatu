@@ -11,10 +11,12 @@ if ($_POST['aksi'] == 'tambah') {
         "email" => $_POST['email'],
         "username" => $_POST['username'],
         "password" => $_POST['password'],
+        "role" => $_POST['role'],
         "aksi" => $_POST['aksi']
     );
     $clientPelanggan->tambah_pelanggan($data);
-    header('location:pelanggan.php');
+    echo '<script>alert("Register Berhasil"); window.location.href = "../login.php";</script>';
+    exit();
 } else if ($_POST['aksi'] == 'ubah') {
     $data = array(
         "id_pelanggan" => $_POST['id_pelanggan'],
@@ -37,4 +39,3 @@ if ($_POST['aksi'] == 'tambah') {
     header('location:pelanggan.php');
 }
 unset($clientPelanggan, $data);
-?>
