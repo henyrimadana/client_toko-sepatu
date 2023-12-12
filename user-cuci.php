@@ -1,5 +1,5 @@
 <?php
-include "admin/client-transaksi.php";
+include "cuci/client-transaksi.php";
 include "admin/client-pelanggan.php";
 
 session_start();
@@ -16,14 +16,8 @@ if ($role !== 'user') {
     exit();
 }
 
-// Dapatkan ID pengguna yang sedang login
-$idPelanggan = $_SESSION['id_pelanggan'];
+$dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
 
-// Ambil transaksi hanya untuk pengguna yang sedang login
-$dataTransaksi = $clientTransaksi->tampil_transaksi_by_pelanggan($idPelanggan);
-
-// Ambil semua data pelanggan
-$dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +39,7 @@ $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
 <body>
     <!-- Navigation-->
     <?php
-    $activePage = 'toko';
+    $activePage = 'cuci';
     include "navbar-user.php";
     ?>
 
@@ -53,8 +47,8 @@ $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
     <header class="bg-dark py-3">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Transaksi</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Menjual Sepatu termurah dan lengkap</p>
+                <h1 class="display-4 fw-bolder">Cuci Sepatu</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Mencuci Sepatu termurah dan terbersih</p>
             </div>
         </div>
     </header>
@@ -68,12 +62,11 @@ $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
                         <tr>
                             <th class="col-1">No</th>
                             <th class="col-1">ID Transaksi</th>
-                            <th>Produk</th>
-                            <th>Pelanggan</th>
-                            <th>Tanggal</th>
-                            <th>Jumlah</th>
-                            <th class="col-2">Harga</th>
-                            <th class="col-2">Total</th>
+                            <th>Paket</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Tanggal Masuk</th>
+                            <th>Tanggal Keluar</th>
+                            <th>Harga</th>
                         </tr>
                     </thead>
                     <tbody class="table-border text-center align-middle text-wrap">
@@ -88,24 +81,23 @@ $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
                                     <?= $r->id_transaksi ?>
                                 </td>
                                 <td>
-                                    <?= $r->nama_produk ?>
+                                    <?= $r->nama_paket ?>
                                 </td>
                                 <td>
-                                    <?= $r->nama ?>
-                                </td>
-
-                                <td>
-                                    <?= $r->tanggal ?>
+                                    <?= $r->nama_pelanggan ?>
                                 </td>
 
                                 <td>
-                                    <?= $r->jumlah ?>
+                                    <?= $r->tgl_masuk ?>
+                                </td>
+
+                                <td>
+                                    <?= $r->tgl_keluar ?>
                                 </td>
                                 <?php $total = $r->jumlah * $r->harga ?>
                                 <td class="col-2 text-center">
                                     Rp. <?php echo number_format($r->harga, 0, ',', '.'); ?>
                                 </td>
-                                <td class="col-2 text-center">Rp. <?php echo number_format($total, 0, ',', '.'); ?></td> <!-- New column for total -->
 
 
                             </tr>

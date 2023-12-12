@@ -1,8 +1,11 @@
 <?php
-require_once "./admin/client-produk.php";
+include "./admin/client-produk.php";
 $dataProduk = $clientProduk->tampil_semua_produk();
 include "./admin/client-pelanggan.php";
 $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
+include "./cuci/client-paket.php";
+$dataPaket = $clientPaket->tampil_semua_paket();
+
 
 session_start();
 
@@ -37,49 +40,16 @@ if ($role !== 'user') {
 
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand navbar-light bg-light">
-        <div class="container-md">
-            <a class="navbar-brand" href="./utama.php">HISHOES</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./utama.php">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Transaksi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./form-transaksi.php">Tambah Transaksi</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="user-transaksi.php?id_pelanggan=<?php echo $_SESSION['id_pelanggan']; ?>">Detail Transaksi</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo $_SESSION['username']; ?>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="logout.php?logout">Logout</a></li>
-                </ul>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php
+    $activePage = 'home';
+    include "navbar-user.php";
+    ?>
 
     <!-- Header-->
-    <header class="bg-dark py-3">
+    <header class="bg-dark py-2">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Selamat Datang, <?php echo $_SESSION['nama']; ?>!</h1>
+                <h2 class="fw-bold">Selamat Datang, <?php echo $_SESSION['nama']; ?>!</h2>
                 <p class="lead fw-normal text-white-50 mb-0">Menjual Sepatu termurah dan lengkap</p>
             </div>
         </div>
@@ -87,49 +57,70 @@ if ($role !== 'user') {
 
     <!-- Section-->
     <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <?php
-                foreach ($dataProduk as $produk) {
-                ?>
-                    <div class="col-4 mb-4">
-                        <div class="card h-100">
-
-                            <!-- Product image-->
-                            <img class="card-img-top" src="admin/<?= $produk->image ?>" alt="<?= $produk->nama_produk ?>" />
-                            <!-- Product details-->
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder mb-4">
-                                        <?= $produk->nama_produk ?>
-                                    </h5>
-                                    <p class="card-subtitle py-2 small text-secondary">
-                                        <?= $produk->nama_kategori ?>
-                                    </p>
-                                    <!-- Product price-->
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">
-                                            <p class="card-text ">Rp.
-                                                <?= number_format($produk->harga, 0, ',', '.'); ?>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </div>
+        <div class="container-fluid mb-5 px-4">
+            <div class="row">
+                <!-- Toko Sepatu -->
+                <div class="col-8">
+                    <div class="card text-center h-100">
+                        <h4 class="card-header">Toko Sepatu</h4>
+                        <div class="card-body">
+                            <div class="row">
+                                <?php
+                                foreach ($dataProduk as $produk) {
+                                ?>
+                                    <div class="col-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="admin/<?= $produk->image ?>" class="card-img-top" alt="<?= $produk->nama_produk ?>">
+                                            <div class="card-body">
+                                                <h6 class="card-title mb-4"><?= $produk->nama_produk ?></h6>
+                                                <p class="card-subtitle py-2 text-secondary"><?= $produk->nama_kategori ?></p>
+                                                <ul class="list-group list-group-flush ">
+                                                    <li class="list-group-item py-1">
+                                                        <p class="card-text ">Rp.
+                                                            <?= number_format($produk->harga, 0, ',', '.'); ?></p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="./form-transaksi.php" class="btn btn-outline-success mt-auto"><i class="fa-solid fa-cart-shopping"></i> Beli
+                                                    Sekarang</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                unset($dataProduk, $produk);
+                                ?>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-success mt-auto" href="./form-transaksi.php"><i class="fa-solid fa-cart-shopping"></i> Beli
-                                        Sekarang</a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-                <?php
-                }
-                unset($dataProduk, $produk);
-                ?>
+                </div>
+
+                <!-- Cuci Sepatu -->
+                <div class="col-4">
+                    <div class="card h-100">
+                        <h4 class="card-header text-center">Cuci Sepatu</h4>
+                        <div class="card-body">
+                            <?php
+                            foreach ($dataPaket as $paket) {
+                            ?>
+                                <div class="list-group mb-2">
+                                    <a href="form-cuci.php" class="list-group-item list-group-item-action" aria-current="true">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1"><?= $paket->nama_paket ?></h6>
+                                            <small>3 days ago</small>
+                                        </div>
+                                        <p class="mb-1 text-secondary"><?= $paket->nama_kategori ?></p>
+                                        <small>Rp. <?= number_format($paket->harga, 0, ',', '.'); ?></small>
+                                    </a>
+                                </div>
+                            <?php
+                            }
+                            unset($dataProduk, $produk);
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

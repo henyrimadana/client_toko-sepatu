@@ -106,7 +106,7 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                             <?= $paket->nama_paket ?>
                           </td>
                           <td>
-                            <?= $paket->harga ?>
+                            Rp. <?php echo number_format($paket->harga, 0, ',', '.'); ?>
                           </td>
 
                           <td>

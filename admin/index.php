@@ -9,6 +9,7 @@ $dataKategori = $clientKategori->tampil_semua_kategori();
 $dataPelanggan = $clientPelanggan->tampil_semua_pelanggan();
 $dataProduk = $clientProduk->tampil_semua_produk();
 $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
+
 ?>
 
 <!DOCTYPE html>

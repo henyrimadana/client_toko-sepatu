@@ -83,6 +83,7 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
                                                 <th>Pelanggan</th>
                                                 <th>Tanggal Masuk</th>
                                                 <th>Tanggal Keluar</th>
+                                                <th>Harga</th>
                                                 <th class="col-2">Aksi</th>
                                             </tr>
                                         </thead>
@@ -111,6 +112,9 @@ $dataTransaksi = $clientTransaksi->tampil_semua_transaksi();
 
                                                     <td>
                                                         <?= $r->tgl_keluar ?>
+                                                    </td>
+                                                    <td>
+                                                        Rp. <?php echo number_format($r->harga, 0, ',', '.'); ?>
                                                     </td>
                                                     <td class="col-2 text-center">
                                                         <!-- <a class="btn btn-outline-primary btn-sm" type="button" a
