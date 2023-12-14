@@ -104,5 +104,5 @@ class clientTransaksi
 
 }
 
-$urlTransaksi = 'http://192.168.56.55/cucisepatu/server-cuci/server_transaksi.php';
+$urlTransaksi = 'http://192.168.56.90/cucisepatu/server-cuci/server_transaksi.php';
 $clientTransaksi = new clientTransaksi($urlTransaksi);

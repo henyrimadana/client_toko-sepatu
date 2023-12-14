@@ -97,5 +97,5 @@ class clientKategori
 
 }
 
-$urlKategori = 'http://192.168.56.55/cucisepatu/server-cuci/server_kategori.php';
+$urlKategori = 'http://192.168.56.90/cucisepatu/server-cuci/server_kategori.php';
 $clientKategori = new clientKategori($urlKategori);

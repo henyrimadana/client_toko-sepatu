@@ -102,5 +102,5 @@ class clientPaket
 }
 
 //url menyesuaikan, nanti buat server_spesifikasi_laptop
-$urlPaket = 'http://192.168.56.55/cucisepatu/server-cuci/server_paket.php';
+$urlPaket = 'http://192.168.56.90/cucisepatu/server-cuci/server_paket.php';
 $clientPaket = new clientPaket($urlPaket);

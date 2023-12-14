@@ -120,5 +120,5 @@ class clientPelanggan
 
 }
 
-$urlPelanggan = 'http://192.168.100.8:8080/toko_sepatu/server_toko-sepatu/server_pelanggan.php';
+$urlPelanggan = 'http://172.20.10.3/tokosepatu/server_toko-sepatu/server_pelanggan.php';
 $clientPelanggan = new clientPelanggan($urlPelanggan);

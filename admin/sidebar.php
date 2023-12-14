@@ -6,7 +6,8 @@ $activePage = isset($activePage) ? $activePage : '';
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="./index.php" class="brand-link">
-        <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="./dist/img/hishoes.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
         <span class="brand-text font-weight-light">HISHOES</span>
     </a>
 
@@ -192,22 +193,8 @@ $activePage = isset($activePage) ? $activePage : '';
                     </ul>
                 </li>
 
-                <!-- Cuci Sepatu -->
-                <div class="border-bottom my-3"></div>
-                <li class="nav-header">Cuci Sepatu</li>
-                <li class="nav-item">
-                    <a href="../cuci/index.php" class="nav-link <?php echo ($activePage == 'cuci') ? 'active' : ''; ?>">
-                        <div class="row align-items-start">
-                            <div class="col-2">
-                                <i class="fas fa-soap"></i>
-                            </div>
-                            <div class="col-8">
-                                <p>Cuci Sepatu</p>
-                            </div>
-                        </div>
-                    </a>
 
-                </li>
+
             </ul>
             </li>
             </ul>
